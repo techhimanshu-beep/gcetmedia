@@ -1,0 +1,135 @@
+:root {
+    --base-color: #F9F3F3;
+  }
+
+.navbar{
+
+}
+
+.nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    font-family: sans-serif;
+    padding: 20px 180px;
+    align-items: center;
+    border: solid 0.2px rgb(202, 202, 202);
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+}
+
+.nav-brand{
+    font-weight: 900;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-search-bar{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 0px;
+    font-family: sans-serif;
+    width: 16vw;
+}
+
+
+.nav-links{
+
+}
+
+.nav-link{
+    font-weight: 200;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 0px 8px;
+}
+
+.nav-options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 13vw;
+}
+
+.nav-options i{
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.options-username{
+    font-family: sans-serif;
+    color: gray;
+}
+
+.nav-image{
+    width: 2vw;
+    border-radius: 50%;
+    margin-top: -2px;
+    margin-right: 2px;
+}
+
+.nav-options-menu{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    border: solid 0.01px #027AD6;
+    border-radius: 8px;
+    position: absolute;
+    top: 60px;
+    right: 19%;
+    z-index: 4;
+    background-color: white;
+}
+
+.nav-options-menu ul{
+    list-style: none;
+}
+.nav-options-menu li{
+    margin: 12px 0px;
+}
+.nav-options-menu a{
+    text-decoration: none;
+    color: #027AD6;
+}
+
+.mobile{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links{
+        display: none;
+    }
+
+    .nav{
+        padding: 20px 0px;
+    }
+
+    .nav-brand{
+        
+    }
+
+    .nav-options{
+        width: 34vw;
+    }
+
+    .nav-image{
+        width: 6vw;
+        border-radius: 50%;
+        margin-top: -2px;
+        margin-right: 8px;
+    }
+
+    .nav-options-menu{
+        right: 12%;
+    }
+
+    .mobile{
+        display: flex;
+    }
+}

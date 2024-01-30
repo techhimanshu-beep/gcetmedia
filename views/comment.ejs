@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECC Media</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav">
+            <div class="nav-start" style="display: flex;">
+                <div class="nav-brand">
+                    eccmedia
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="" class="nav-link">Home</a>
+                <a href="" class="nav-link">About Us</a>
+                <a href="" class="nav-link">Report</a>
+                <a href="" class="nav-link">Help!</a>
+            </div>
+            <div class="nav-options"> <img src="img/user.webp" alt="" class="nav-image">
+                <p class="options-username"><%-userName%></p>
+                <i class="bi bi-caret-down-fill"></i>
+            </div>
+        </div>
+    </div>
+    <div class="main-section">
+        <div class="left-section">
+            <div class="catagories">
+                <p class="left-section-heading">
+                    TOP CATAGORIES
+                </p>
+                <div class="catagory-card">
+                    <div class="catagory-card-title">
+                        Holidays
+                    </div>  
+                    <div class="catagory-card-details">
+                        4 posts
+                    </div>
+                </div>
+                <div class="catagory-card">
+                    <div class="catagory-card-title">
+                        Internships
+                    </div>
+                    <div class="catagory-card-details">
+                        32 posts
+                    </div>
+                </div>
+                <div class="catagory-card">
+                    <div class="catagory-card-title">
+                        College Issues
+                    </div>
+                    <div class="catagory-card-details">
+                        14 posts
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle-section">
+
+            <div class="feeds">
+                <div class="feeds-bar">
+                    <a href="/" id="active">Latest Feed</a>
+                    <a href="/notifications">Notifications</a>
+                    <a href="/whats-going-on">What's going on?</a>
+                    <a href="/interships">Internships</a>
+                </div>
+                <% for(var i=(posts.length)-1; i>=0; i--){ %>
+                <div class="feed-card" style="padding-bottom: 10px; padding-top: 35px;">
+                    <div class="feed-card-top">
+                        <div class="user-profile">
+                            <img src="img/user.webp" class="user-profile-image" alt="">
+                        </div>
+                        <p class="user-name">
+                            <%=posts[i].postUserName%>
+                        </p>
+                    </div>
+                    <div class="feed-card-buttom" style="margin-top: 20px">
+                        <p class="post">
+                            <%=posts[i].postContent%>
+                        </p> 
+                    </div>
+                </div>
+                <!-- ------comments----- -->
+               
+                <% for(var j=(posts[i].postComments.length)-1; j>=0; j--){ %>
+                    <div class="feed-card" style="padding-bottom: 10px; padding-top: 35px;">
+                        <div class="feed-card-top">
+                            <div class="user-profile">
+                                <img src="img/user.webp" class="user-profile-image" alt="">
+                            </div>
+                            <p class="user-name">
+                                <%=posts[i].postComments[j].commentUserName%>
+                            </p>
+                        </div>
+                        <div class="feed-card-buttom" style="margin-top: 20px">
+                            <p class="post">
+                                <%=posts[i].postComments[j].commentContent%>
+                            </p> 
+                        </div>
+                    </div>
+        <% } %>
+                    
+                <!-- ------comments----- -->
+                <div class="feed-card">
+                    <div class="feed-card-buttom" style="margin-top: -15px;">
+                       <form action="/handlecomment" method="post">
+                         <input class="feed-input-content" name="comment"  type="text" placeholder="What's your opinion on?">
+                         <input style="display: none;" name="username" type="text" value="<%-userName%>">
+                         <input style="display: none;" name="postid" type="text" value="<%=posts[i].id%>">
+                         <div class="options">
+                             <button class="feed-input-btn">Comment</button>    
+                         </div>
+                       </form>
+                    </div>
+                </div>
+        <% } %>
+
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="right-section-heading">
+                POPULAR BLOGS
+            </div>
+            <div class="polular-post-card">
+                <div class="popular-post-card-title">
+                    Lorem ipsum, dolor sit amet consectetur.
+                </div>
+                <div class="popular-post-card-details">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi porro.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $('#like').on("click", function(){
+            $('#like').removeClass('bi-star').addClass('bi-star-fill')
+        })
+    </script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</body>
+
+</html>

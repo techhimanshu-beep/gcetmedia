@@ -1,0 +1,346 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.feeds-bar {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px 10px 0px 10px;
+    width: 70%;
+}
+
+
+.feeds-bar a {
+    text-decoration: none;
+    color: #555;
+    background-color: white;
+    margin: 10px 0px;
+    padding: 10px 10px;
+    border-radius: 100px;
+    border: solid 0.5px rgb(202, 202, 202);
+}
+.feeds-bar a:hover {
+    border: solid 0.5px #027AD6;
+    color: #027AD6;
+}
+.left-section {
+    margin: 10px 0px 0px 0px;
+    width: 20%;
+    background-color: var(--base-color);
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    height: 100vh;
+}
+
+.left-section .left-section-heading {
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin: 10px 0px 20px 20px;
+}
+
+.left-section .catagories {
+    padding: 20px 4px 20px 4px;
+    margin: 20px 20px 0px 0px;
+    background-color: white;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: 70%;
+}
+
+.left-section .catagories .catagory-card {
+    text-align: center;
+    border-radius: 18px;
+    border: solid 0.1px rgb(226, 226, 226);
+    margin: 8px 8px;
+    padding: 20px 10px;
+}
+
+.left-section .catagories .catagory-card .catagory-card-title {
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin-left: -10px;
+}
+
+.left-section .catagories .catagory-card .catagory-card-details {
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 400;
+    margin-left: -10px;
+    margin-top: 6px;
+}
+
+.middle-section {
+    width: 70%;
+    background-color: white;
+    margin: 10px 0px 0px 0px;
+}
+
+.middle-section .feeds {
+    background-color: white;
+    width: 70%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.middle-section .feeds .feed-card {
+    border-radius: 18px;
+    border: solid 0.1px rgb(226, 226, 226);
+    margin: 8px 8px;
+    padding: 30px 20px;
+}
+
+.middle-section .feeds .feed-card .feed-card-top {
+    margin: -20px 0px 10px 0px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    width: 26%;
+}
+
+.main-section .feeds .feed-card .feed-card-top .user-profile-image {
+    width: 2vw;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+.main-section .feeds .feed-card .feed-card-top .user-name {
+    font-size: 16px;
+    font-weight: 700;
+    font-family: sans-serif;
+    margin-left: 10px;
+}
+
+.main-section .feeds .feed-card .feed-card-buttom {}
+
+.main-section .feeds .feed-card .feed-card-buttom .post {
+    font-size: 18px;
+    font-family: sans-serif;
+    padding: 0px 0px 10px 0px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.main-section .feeds .feed-card .feed-card-buttom .options {
+    margin: 20px 0px -10px 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-section .feeds .feed-card .feed-card-buttom .options .delete {
+    border: none;
+    outline: none;
+    background-color: white;
+    color: red;
+    position: absolute;
+}
+
+.main-section .feeds .feed-card .feed-card-buttom .options .delete i {
+    color: red;
+}
+
+.main-section .feeds .feed-card .feed-card-buttom .options i {
+    margin: 0px 15px 0px 0px;
+    font-size: 20px;
+    color: #555;
+}
+
+.feed-input-heading {
+    border: none;
+    font-size: 20px;
+    padding: 5px 0px;
+}
+
+.feed-input-heading:focus {
+    border: none;
+    outline: none;
+}
+
+.feed-input-content {
+    border: none;
+    width: 100%;
+    font-size: 18px;
+    padding: 15px 0px 10px 0px;
+    color: gray;
+}
+
+.feed-input-btn {
+    pointer-events: auto;
+    cursor: pointer;
+    background: #027AD6;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 5px;
+}
+
+.feed-input-content:focus {
+    border: none;
+    outline: none;
+}
+
+.right-section {
+    margin: 10px 0px 0px 0px;
+    width: 10%;
+    background-color: var(--base-color);
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.right-section .right-section-heading {
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin: 20px 0px 20px 14px;
+}
+
+.right-section .polular-post-card {
+    border-radius: 18px;
+    border: solid 0.1px rgb(226, 226, 226);
+    margin: 8px 8px;
+    padding: 20px 10px;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+.right-section .polular-post-card .popular-post-card-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.right-section .polular-post-card .popular-post-card-details {
+    font-size: 12px;
+    color: #555;
+}
+
+.feeds-comments {
+    background-color: white;
+    width: 50%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.feeds-comment {
+    position: relative;
+    left: 20%;
+
+}
+
+.feeds-comment-card {
+    border-radius: 18px;
+    border: solid 0.1px rgb(226, 226, 226);
+    margin: 8px 8px;
+    padding: 20px 10px;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+.feeds-comment-card-top {
+    margin: -10px 0px 10px 0px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.feeds-comment-card-top .user-profile-image {
+    width: 2vw;
+    height: 4vh;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+.feeds-comment-card-top .user-name {}
+
+.feeds-comment-card-buttom {}
+
+
+.contact-input{
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    padding: 15px 10px 10px 10px;
+    color: gray;
+}
+
+.contact-label{
+    font-size: 18px;
+    color: gray;
+}
+
+@media (max-width: 768px) {
+    .right-section {
+        display: none;
+    }
+
+    .left-section{
+        display: none;
+    }
+
+    .middle-section{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+    }
+
+    .feeds{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+    }
+
+    .feeds-bar{
+        width: 100%;
+    }
+    .feeds-bar a{
+        padding: 4px;
+        margin: 0px 0px -10px -15px;
+        font-size: 8px;
+    }
+
+    .middle-section .feeds .feed-card {
+        border-radius: 18px;
+        border: solid 0.1px rgb(226, 226, 226);
+        margin: 20px 0px;
+        padding: 30px 20px;
+    }
+
+    .middle-section .feeds .feed-card .feed-card-top {
+        width: 66%;
+        margin: -5px 0px 0px 0px;
+    }
+}
+
+/* ---------------extra---------- */
+
+#active{
+    border: solid 0.5px #027AD6;
+    color: #027AD6;
+}

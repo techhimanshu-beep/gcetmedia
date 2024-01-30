@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%-page%></title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="nav">
+            <div class="nav-start" style="display: flex;">
+                <div class="nav-brand">
+                    gcet media
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="" class="nav-link">Home</a>
+                <a href="" class="nav-link">About Us</a>
+                <a href="" class="nav-link">Report</a>
+                <a href="" class="nav-link">Help!</a>
+            </div>
+            <div class="nav-options"> <img src="img/user.webp" alt="" class="nav-image">
+                <p class="options-username"><%-userName%></p>
+                <i id="nav-options-menu-open" class="bi bi-caret-down-fill"></i>
+                <div class="nav-options-menu">
+                    <ul>
+                        <li><a class="mobile" href="/">Home</a></li>
+                        <li><a class="mobile" href="/about">About Us</a></li>
+                        <li><a class="mobile" href="/report">Report</a></li>
+                        <li><a class="mobile" href="/help">Help</a></li>
+                        <li><a href="">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-section">
+        <div class="left-section">
+            <div class="catagories">
+                <p class="left-section-heading">
+                    TOP CATAGORIES
+                </p>
+                <div class="catagory-card">
+                    <div class="catagory-card-title">
+                        Holidays
+                    </div>  
+                    <div class="catagory-card-details">
+                        4 posts
+                    </div>
+                </div>
+                <div class="catagory-card">
+                    <div class="catagory-card-title">
+                        Internships
+                    </div>
+                    <div class="catagory-card-details">
+                        32 posts
+                    </div>
+                </div>
+                <div class="catagory-card">
+                    <div class="catagory-card-title">
+                        College Issues
+                    </div>
+                    <div class="catagory-card-details">
+                        14 posts
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="middle-section">
+
+            <div class="feeds">
+                <div class="feeds-bar">
+                    <a href="/" id="active">Latest Feed</a>
+                    <a href="/notifications">Notifications</a>
+                    <a href="/whats-going-on">What's going on?</a>
+                    <a href="/interships">Internships</a>
+                </div>
+                <div class="feed-card">
+                    <div class="feed-card-top">
+                        <div class="user-profile">
+                            <img src="img/user.webp" class="user-profile-image" alt="">
+                        </div>
+                        <p class="user-name">
+                            <%-userName%>
+                        </p>
+                        
+                        
+                    </div>
+                    <div class="feed-card-buttom">
+                       <form action="/" method="post">
+                         <input class="feed-input-content" name="postContent"  type="text" placeholder="What's going on?">
+                         <input style="display: none;" name="postUserName" type="text" value="<%-userName%>">
+                         <div class="options">
+                             <button class="feed-input-btn">Post</button> 
+                             <% if(userAdmin == true){ %>
+                             <select style="margin: 0px 10px; background-color: #F9F3F3; color: black; padding-right: 0px; outline: none;" class="feed-input-btn" name="catagory" id="">
+                                 <option value="feed">Latest Feed</option>
+                                 <option value="notification">Notifications</option>
+                                 <option value="goingon">What's going on?</option>
+                                 <option value="internship">Internships</option>
+                             </select>   
+                             <% } %>
+                         </div>
+                       </form>
+                    </div>
+                </div>
+                <% for(var i=(posts.length)-1; i>=0; i--){ %>
+                <div class="feed-card">
+                    <div class="feed-card-top">
+                        <div class="user-profile">
+                            <img src="img/user.webp" class="user-profile-image" alt="">
+                        </div>
+                        <p class="user-name">
+                            <%=posts[i].postUserName%>
+                        </p>
+                    </div>
+                    <div class="feed-card-buttom" style="margin-top: 20px">
+                        <p class="post">
+                            <%=posts[i].postContent%>
+                        </p>
+                        
+                        <div class="options">
+                            <a href="" style="margin-top: 2px; margin-right: 5px; outline: none; text-decoration: none; font-size: 10px;"><%=posts[i].postLikes%></a>
+                            <a href="/like/<%=posts[i].id%>"><i  class="bi bi-star" style="margin-top: 2px;"></i></a>
+                            <a href="/<%=posts[i].id%>"><i  class="bi bi-chat-left-dots" style="margin-top: 2px;"></i></a>
+                            <% if(posts[i].postUserName == userName){ %>
+                            <form action="delete" method="post">
+                                <input type="text" style="display: none;" name="postContent" value="<%=posts[i].postContent%>">
+                                <button class="delete" type="submit"><i class="bi bi-trash"></i></button>
+                            </form>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+        <% } %>
+
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="right-section-heading">
+                POPULAR BLOGS
+            </div>
+            <div class="polular-post-card">
+                <div class="popular-post-card-title">
+                    Lorem ipsum, dolor sit amet consectetur.
+                </div>
+                <div class="popular-post-card-details">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi porro ...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        $('.nav-options-menu').hide()
+        $('#like').on("click", function(){
+            $('#like').removeClass('bi-star').addClass('bi-star-fill')
+        })
+        $('#nav-options-menu-open').on("click", function(){
+            $('.nav-options-menu').toggle()
+        })
+        
+    </script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<div style="padding: 20px;">
+<h1 class="page-heading"><%-page%></h1>
+<form action="/contact" method="post" style="margin-top: 20px;">
+    <div class="">
+        <label class="contact-label">Enter your email*</label>
+        <input type="text" class="contact-input" name="email" style="margin: 10px 0px;">
+        <label class="contact-label" style="padding: 8px 0px 0px 0px;">Your Message*</label>
+        <textarea name="query" class="contact-input" id="" cols="30" rows="4" style="margin: 10px 0px;"></textarea>
+    </div>
+    <button class="feed-input-btn" type="submit" name="button">Submit</button>
+</form>
+</div>
+
+<%- include("partials/footer"); -%>

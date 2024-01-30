@@ -9,7 +9,7 @@ Step 2: Make sure that your pc has node.js installed by typing node -v in your t
 
 Step 3: Navigate the directory in which the main folder is present in the terminal.
 
-Step 4: Type “npm install” command in the terminal.
+Step 4: Type “npm install” command in the terminal to install node modules folder.
 
 Step 5: Make sure that you have MongoDB installed and running in the background.
 
